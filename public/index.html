@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar ou criar conta | Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="/" aria-label="Academia">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="2" y="15" width="5" height="10" rx="1" fill="#fff"/><rect x="8" y="10" width="5" height="20" rx="1" fill="#fff"/>
+          <rect x="13" y="18" width="14" height="4" fill="#fff"/>
+          <rect x="27" y="10" width="5" height="20" rx="1" fill="#fff"/><rect x="33" y="15" width="5" height="10" rx="1" fill="#fff"/>
+        </svg>
+        Academia
+      </a>
+      <nav class="nav-links" aria-label="Acesso">
+        <a href="#entrar" data-abrir="entrar">Entrar</a>
+        <a class="cta skew" href="#criar-conta" data-abrir="criar-conta"><span>Criar conta</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero on-ink">
+      <svg class="plate" viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="4" aria-hidden="true">
+        <circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="76"/><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="12"/>
+      </svg>
+      <div class="hero-in">
+        <div class="hero-copy">
+          <h1 class="display">Treine com método. Cada série registrada.</h1>
+          <p>Veja a sua ficha com exercícios, séries, repetições e cargas, e saiba qual professor montou o seu treino.</p>
+          <ul class="hero-points">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Ficha detalhada, sempre atualizada</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Professor responsável identificado</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Conta nova já recebe uma ficha inicial</li>
+          </ul>
+        </div>
+
+        <div class="auth">
+          <div class="tabs-auth" role="tablist" aria-label="Acesso à conta">
+            <button type="button" role="tab" id="tab-entrar" aria-controls="painel-entrar" aria-selected="true">Entrar</button>
+            <button type="button" role="tab" id="tab-criar-conta" aria-controls="painel-criar-conta" aria-selected="false" tabindex="-1">Criar conta</button>
+          </div>
+
+          <section class="auth-panel" id="painel-entrar" role="tabpanel" aria-labelledby="tab-entrar">
+            <div>
+              <h2 class="display">Acesse a sua ficha</h2>
+            </div>
+            <p class="sub">Use o e-mail cadastrado na academia.</p>
+            <div id="erro-entrar" class="alert" role="alert" hidden></div>
+            <form id="form-login" novalidate>
+              <div class="field">
+                <label for="login-email">E-mail</label>
+                <input class="input" id="login-email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field">
+                <label for="login-senha">Senha</label>
+                <div class="input-wrap">
+                  <input class="input" id="login-senha" type="password" autocomplete="current-password" required>
+                  <button class="toggle-pass" type="button" data-toggle="login-senha" aria-pressed="false">Mostrar</button>
+                </div>
+              </div>
+              <button class="btn btn-block skew" id="btn-entrar" type="submit"><span>Entrar</span></button>
+            </form>
+          </section>
+
+          <section class="auth-panel" id="painel-criar-conta" role="tabpanel" aria-labelledby="tab-criar-conta" hidden>
+            <div>
+              <h2 class="display">Crie a sua conta</h2>
+            </div>
+            <p class="auth-note">Ao criar a conta, um dos professores da academia já monta a sua primeira ficha de treino.</p>
+            <div id="erro-criar" class="alert" role="alert" hidden></div>
+            <form id="form-cadastro" novalidate>
+              <div class="field">
+                <label for="cad-nome">Nome completo</label>
+                <input class="input" id="cad-nome" type="text" autocomplete="name" required>
+              </div>
+              <div class="row-2">
+                <div class="field">
+                  <label for="cad-email">E-mail</label>
+                  <input class="input" id="cad-email" type="email" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="field">
+                  <label for="cad-nasc">Nascimento <span class="hint">(opcional)</span></label>
+                  <input class="input" id="cad-nasc" type="date" autocomplete="bday">
+                </div>
+              </div>
+              <div class="row-2">
+                <div class="field">
+                  <label for="cad-senha">Senha</label>
+                  <input class="input" id="cad-senha" type="password" autocomplete="new-password" aria-describedby="dica-senha" required>
+                </div>
+                <div class="field">
+                  <label for="cad-senha2">Repita a senha</label>
+                  <input class="input" id="cad-senha2" type="password" autocomplete="new-password" required>
+                </div>
+              </div>
+              <div class="field">
+                <span class="hint" id="dica-senha">Mínimo de 6 caracteres.</span>
+                <button class="toggle-pass" type="button" data-toggle="cad-senha cad-senha2" aria-pressed="false" style="position:static;justify-self:start;padding:0;height:auto">Mostrar senhas</button>
+              </div>
+              <button class="btn btn-block skew" id="btn-criar" type="submit"><span>Criar conta e ver minha ficha</span></button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="O que você encontra na sua área">
+      <div class="features-in">
+        <div class="feature">
+          <div class="ico skew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+          <h3 class="display">Ficha completa</h3>
+          <p>Séries, repetições e carga de cada exercício, organizados por treino do dia.</p>
+        </div>
+        <div class="feature">
+          <div class="ico skew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></div>
+          <h3 class="display">Professor responsável</h3>
+          <p>Saiba quem montou o seu treino e como falar com ele quando tiver dúvidas.</p>
+        </div>
+        <div class="feature">
+          <div class="ico skew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3 class="display">No celular ou impressa</h3>
+          <p>Consulte entre uma série e outra, ou imprima a ficha para levar ao treino.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <span>Academia</span>
+      <span>Esqueceu a senha? Fale com a recepção.</span>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

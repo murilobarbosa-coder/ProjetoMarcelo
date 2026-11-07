@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha ficha de treino | Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="/ficha.html" aria-label="Academia, minha ficha">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="2" y="15" width="5" height="10" rx="1" fill="#fff"/><rect x="8" y="10" width="5" height="20" rx="1" fill="#fff"/>
+          <rect x="13" y="18" width="14" height="4" fill="#fff"/>
+          <rect x="27" y="10" width="5" height="20" rx="1" fill="#fff"/><rect x="33" y="15" width="5" height="10" rx="1" fill="#fff"/>
+        </svg>
+        Academia
+      </a>
+      <div class="who">
+        <span>Conectado como <strong id="nome-topo"></strong></span>
+        <button class="btn btn-ghost skew" id="btn-sair" type="button"><span>Sair</span></button>
+      </div>
+    </div>
+  </header>
+
+  <div id="topo"></div>
+  <main class="wrap" id="conteudo" aria-live="polite">
+    <p class="loading">Carregando sua ficha…</p>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <span>Academia</span>
+      <span>Dúvidas sobre o treino? Fale com o seu professor ou com a recepção.</span>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ficha.js"></script>
+</body>
+</html>
